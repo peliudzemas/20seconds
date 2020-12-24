@@ -1,0 +1,85 @@
+$color-primary: #cb0808;
+$color-yellow: #ffc145;
+$color-green: #036d19;
+$color-turqoise: #4ecdc4;
+$color-purple: #5438dc;
+$color-white: #ffffff;
+
+$font-regular: 400;
+$font-medium: 500;
+$font-semi-bold: 600;
+$font-bold: 700;
+$font-extra-bold: 800;
+
+$desktop: 1600px;
+$tablet-landscape: 1024px;
+$tablet-portrait: 900px;
+$mobile: 560px;
+
+.landing {
+  background-color: #f9f9f9;
+}
+
+.header {
+  height: 90px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.link {
+  color: $color-primary;
+  font-weight: 500;
+
+  &--underline {
+    text-decoration: underline;
+  }
+}
+
+.max-width {
+  max-width: 1600px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.divider {
+  align-self: flex-start;
+  background-color: $color-primary;
+  border-radius: 50px;
+  grid-area: divider;
+}
+
+.buttons {
+    &__button {
+        border: 2px solid $color-primary;
+        box-sizing: border-box;
+        display: inline-block;
+        font-weight: $font-medium;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 14em;
+      }
+    
+      &__main-button {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    
+      &__sub-button {
+        background-color: $color-white;
+        color: $color-primary;
+      }
+}
+
+.span {
+    &--red {
+      color: $color-primary;
+    }
+  }
+
+@media (max-width: $tablet-landscape) {
+  .headlines {
+    text-align: center;
+  }
+}

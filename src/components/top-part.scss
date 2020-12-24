@@ -1,0 +1,275 @@
+$color-primary: #cb0808;
+$color-yellow: #ffc145;
+$color-green: #036d19;
+$color-turqoise: #4ecdc4;
+$color-purple: #5438dc;
+$color-white: #ffffff;
+
+$font-regular: 400;
+$font-medium: 500;
+$font-semi-bold: 600;
+$font-bold: 700;
+$font-extra-bold: 800;
+
+$desktop: 1600px;
+$tablet-landscape: 1024px;
+$tablet-portrait: 900px;
+$mobile: 560px;
+
+.top-grid {
+  display: grid;
+  font-size: 1rem;
+  grid-template-areas:
+    "one two . three four"
+    "one headlines headlines three five"
+    "six seven cta cta five"
+    "six seven . eight nine";
+  grid-template-columns: repeat(5, minmax(0, 320px));
+  grid-template-rows: repeat(4, minmax(0, 210px));
+  margin: 10px auto;
+  max-width: 1600px;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.grid {
+  overflow: hidden;
+  position: relative;
+  &:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .image {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__item-one {
+    grid-area: one;
+
+    &:after {
+      background-color: $color-primary;
+    }
+  }
+  &__item-two {
+    grid-area: two;
+
+    &:after {
+      background-color: $color-purple;
+    }
+  }
+  &__item-three {
+    grid-area: three;
+
+    &:after {
+      background-color: $color-green;
+    }
+  }
+  &__item-four {
+    grid-area: four;
+
+    &:after {
+      background-color: $color-yellow;
+    }
+  }
+  &__item-five {
+    grid-area: five;
+
+    &:after {
+      background-color: $color-primary;
+    }
+  }
+  &__item-six {
+    grid-area: six;
+
+    &:after {
+      background-color: $color-yellow;
+    }
+  }
+  &__item-seven {
+    grid-area: seven;
+
+    &:after {
+      background-color: $color-turqoise;
+    }
+  }
+  &__item-eight {
+    grid-area: eight;
+
+    &:after {
+      background-color: $color-purple;
+    }
+  }
+  &__item-nine {
+    grid-area: nine;
+
+    &:after {
+      background-color: $color-turqoise;
+    }
+  }
+}
+
+.image {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.headlines {
+  align-self: center;
+  grid-area: headlines;
+  padding: 0 20px;
+  text-align: left;
+  text-transform: uppercase;
+
+  &__main-headline {
+    font-size: 4.5em;
+    font-weight: $font-extra-bold;
+    margin: 0;
+  }
+
+  &__sub-headline {
+    font-size: 1.5em;
+    font-weight: $font-bold;
+    margin: 0;
+  }
+}
+
+.disclaimer {
+  align-self: flex-end;
+  grid-area: disclaimer;
+  padding: 1.25em;
+
+  &__text {
+    font-size: 0.825em;
+    text-align: left;
+  }
+}
+
+.cta {
+    align-self: center;
+    grid-area: cta;
+    text-transform: uppercase;
+  
+    &__buttons {
+      display: flex;
+      justify-content: center;
+    }
+  
+    &__text {
+      display: flex;
+      font-size: 1.75em;
+      font-weight: $font-semi-bold;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 1.75rem;
+    }
+  
+    &__record-icon {
+      display: inline-block;
+      height: 1.75rem;
+      width: 1.75rem;
+      padding: 0 1rem;
+    }
+  
+    &__read-more,
+    &__watch-videos {
+        font-size: 1.25em;
+        margin: 5px;
+    }
+  }
+
+@media (max-width: $desktop) {
+  .top-grid {
+    font-size: 0.825rem;
+    grid-template-rows: repeat(4, minmax(0, 160px));
+  }
+}
+
+@media (max-width: $tablet-landscape) {
+  .top-grid {
+    font-size: 0.75rem;
+    grid-template-areas:
+      "one one two"
+      "six nine nine"
+      "headlines headlines headlines"
+      "cta cta cta";
+    grid-template-columns: repeat(3, calc(100%/3));
+    grid-template-rows: 30vw 30vw 15vw 15vw;
+  }
+}
+
+@media (max-width: $tablet-portrait) {
+  .top-grid {
+    grid-template-areas:
+      "one one two"
+      "six nine nine"
+      "headlines headlines headlines"
+      "cta cta cta";
+    grid-template-columns: repeat(3, calc(100%/3));
+  }
+
+  .grid {
+    &__item-three,
+    &__item-four,
+    &__item-five,
+    &__item-seven,
+    &__item-eight {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .top-grid {
+    font-size: 0.7rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 25vh 25vh 15vh auto;
+  }
+
+  .headlines {
+    &__main-headline {
+      font-size: 3em;
+    }
+
+    &__sub-headline {
+      font-size: 1.5em;
+    }
+  }
+
+  .cta {
+    &__text {
+      font-size: 1.5em;
+      padding-bottom: 2rem;
+    }
+
+    &__record-icon {
+      height: 1.25rem;
+      padding: 0 0.5rem;
+      width: 1.25rem;
+    }
+    
+    &__buttons {
+      display: block;
+      text-align: center;
+    }
+
+    &__read-more,
+    &__watch-videos {
+      margin: 5px 10px;
+    }
+  }
+  .disclaimer {
+    &__text {
+      font-size: 0.9em;
+    }
+  }
+}

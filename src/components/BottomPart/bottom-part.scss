@@ -1,0 +1,737 @@
+$color-primary: #cb0808;
+$color-yellow: #ffc145;
+$color-green: #036d19;
+$color-turqoise: #4ecdc4;
+$color-purple: #5438dc;
+$color-white: #ffffff;
+
+$shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+$font-regular: 400;
+$font-medium: 500;
+$font-semi-bold: 600;
+$font-bold: 700;
+$font-extra-bold: 800;
+
+$desktop: 1600px;
+$tablet-landscape: 1024px;
+$tablet-portrait: 900px;
+$mobile: 560px;
+
+.bottom-grid {
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+.instructions {
+  padding: 2.5em 1.25em;
+
+  &__headline {
+    font-size: 3em;
+    font-weight: $font-bold;
+  }
+
+  &__items {
+    align-content: stretch;
+    column-gap: 2.5em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    align-self: stretch;
+    background-color: $color-white;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    column-gap: 1em;
+    display: grid;
+    grid-template-areas:
+      "insNumber insText"
+      "divider divider"
+      "insSubText insSubText";
+    grid-template-columns: 3.75em auto;
+    grid-template-rows: 5em 2px auto;
+    padding: 1em;
+  }
+
+  &__number {
+    align-self: flex-start;
+    font-size: 3.75em;
+    font-weight: $font-bold;
+    grid-area: insNumber;
+    margin: 0;
+  }
+
+  &__text {
+    align-self: flex-start;
+    display: flex;
+    font-size: 1.75em;
+    font-weight: $font-semi-bold;
+    grid-area: insText;
+    height: 100%;
+    margin: 0;
+
+    p {
+      align-self: center;
+      margin: 0;
+    }
+  }
+
+  &__sub-text {
+    align-self: flex-start;
+    display: grid;
+    font-size: 1.25em;
+    grid-area: insSubText;
+    justify-self: center;
+  }
+
+  &__cta-text {
+    line-height: 1.5;
+    padding: 8px 16px;
+    text-align: center;
+
+    &--large {
+      font-size: 2em;
+      font-weight: $font-semi-bold;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  &__create-account,
+  &__sign-in {
+    align-self: center;
+    justify-self: center;
+    padding: 8px 16px;
+  }
+
+  &__apps {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  &__app-link {
+    height: 3em;
+    margin: 0.5em;
+  }
+
+  &__main-prize {
+    background: none;
+    border: none;
+    color: $color-primary;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: $font-semi-bold;
+    padding: 8px 16px;
+  }
+}
+
+.inspiration {
+  padding: 2.5em 1.25em;
+  display: grid;
+  grid-template-areas:
+    "headline video"
+    "list video";
+  column-gap: 2em;
+  justify-content: space-around;
+
+  &__headline {
+    color: $color-primary;
+    font-size: 2em;
+    grid-area: headline;
+    align-self: flex-end;
+  }
+
+  &__list-wrapper {
+    grid-area: list;
+    font-size: 1.25em;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__list-item {
+    display: flex;
+    line-height: 1.5em;
+    align-items: center;
+  }
+
+  &__record-icon {
+    height: 1em;
+    width: 1em;
+    padding-right: 10px;
+  }
+
+  &__promotion-video {
+    overflow: hidden;
+    grid-area: video;
+  }
+
+  &__promotion-thumbnail {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.main-prize {
+  background-color: rgba($color-primary, 0.2);
+  padding: 2.5em 1.25em;
+  text-align: center;
+
+  &__cta-headline {
+    font-size: 2em;
+    font-weight: $font-semi-bold;
+    margin: 2em 0 1em;
+    text-transform: uppercase;
+  }
+
+  &__create-account {
+    margin-bottom: 1.25em;
+    font-size: 1.25em;
+  }
+
+  &__items-wrapper {
+    column-gap: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    row-gap: 2em;
+  }
+
+  &__item {
+    align-items: center;
+    background-color: $color-white;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    column-gap: 2em;
+    display: flex;
+    padding: 1.5em;
+
+    p {
+      font-size: 1.25em;
+      text-align: left;
+    }
+  }
+
+  &__icon-wrapper {
+    max-height: 4.5em;
+    max-width: 4.5em;
+  }
+}
+
+.credits {
+  padding: 2.5em 1.25em;
+
+  &__headline {
+    font-size: 3em;
+    margin: 0;
+    padding-bottom: 1em;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2.5em;
+  }
+
+  &__item {
+    background-color: $color-white;
+    box-shadow: $shadow;
+    border-radius: 10px;
+    padding: 1.5em;
+    text-align: center;
+  }
+
+  &__item-head {
+    display: grid;
+    align-content: center;
+    background-color: $color-primary;
+    font-weight: $font-semi-bold;
+    color: $color-white;
+    box-shadow: $shadow;
+    border-radius: 50%;
+    height: 12.5em;
+    width: 12.5em;
+    text-align: center;
+    position: relative;
+    margin: 1em auto;
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 105%;
+      width: 105%;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: none;
+      border: 0.75em solid $color-primary;
+    }
+  }
+
+  &__head-number {
+    font-size: 3.75em;
+  }
+
+  &__head-text {
+    font-size: 1.5em;
+  }
+
+  &__sub-heading {
+    padding: 1em 0;
+    font-size: 1.25em;
+    font-weight: $font-bold;
+  }
+
+  &__text {
+    text-align: left;
+    font-size: 1em;
+    font-weight: $font-regular;
+    line-height: 1.5;
+    margin: 0;
+    padding: 1em 0;
+  }
+
+  &__cta {
+    text-align: center;
+  }
+
+  &__cta-headline {
+    font-size: 2em;
+    font-weight: $font-semi-bold;
+    text-transform: uppercase;
+    margin: 2em 0 1em;
+  }
+
+  &__create-account {
+    margin-bottom: 20px;
+    font-size: 1.25em;
+  }
+}
+
+.bottom-cta {
+  &__headline-wrapper {
+    background-color: $color-primary;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  &__content-wrapper {
+    text-align: center;
+  }
+
+  &__headline {
+    color: $color-white;
+    font-size: 3em;
+    font-weight: $font-bold;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    align-items: center;
+    display: flex;
+    font-size: 2.5em;
+    font-weight: $font-bold;
+    justify-content: center;
+    padding: 3rem 0;
+    text-transform: uppercase;
+  }
+
+  &__record-icon {
+    display: inline-block;
+    height: 2.8125rem;
+    padding: 0 15px;
+    width: 2.8125rem;
+  }
+
+  &__create-account,
+  &__sign-in {
+    padding: 8px 16px;
+    margin: 5px;
+    font-size: 1.25em;
+  }
+
+  &__apps {
+    margin: 2em auto;
+  }
+
+  &__app-link {
+    height: 3em;
+    margin: 0.5em;
+  }
+}
+
+.information {
+  padding: 2.5em 1.25em;
+
+  &__headline {
+    font-size: 1.25em;
+    font-weight: $font-semi-bold;
+  }
+
+  &__text {
+    font-size: 1em;
+    font-weight: $font-medium;
+  }
+
+  &__terms {
+    font-size: 0.875em;
+    font-weight: $font-medium;
+    text-align: center;
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: $desktop) {
+  .bottom-grid {
+    font-size: 0.825rem;
+  }
+}
+
+@media (max-width: $tablet-landscape) {
+  .bottom-grid {
+    font-size: 0.75rem;
+  }
+
+  .inspiration {
+    &__headline {
+      margin: 0;
+    }
+  }
+
+  .credits {
+    padding: 2.5em 1.25em;
+
+    &__headline {
+      font-size: 3em;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 2.5em;
+    }
+
+    &__item {
+      background-color: $color-white;
+      box-shadow: $shadow;
+      border-radius: 10px;
+      padding: 1.5em;
+      text-align: center;
+    }
+
+    &__item-head {
+      display: grid;
+      align-content: center;
+      background-color: $color-primary;
+      font-weight: $font-semi-bold;
+      color: $color-white;
+      box-shadow: $shadow;
+      border-radius: 50%;
+      height: 12.5em;
+      width: 12.5em;
+      text-align: center;
+      position: relative;
+      margin: 1em auto;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 105%;
+        width: 105%;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: none;
+        border: 0.75em solid $color-primary;
+      }
+    }
+
+    &__head-number {
+      font-size: 3.75em;
+    }
+
+    &__head-text {
+      font-size: 1.5em;
+    }
+
+    &__sub-heading {
+      height: 2.5em;
+      font-size: 1.75em;
+      font-weight: $font-bold;
+    }
+
+    &__text {
+      text-align: left;
+      font-size: 1em;
+      font-weight: $font-regular;
+      line-height: 1.5;
+      margin: 0;
+      padding: 1em 0;
+    }
+
+    &__cta {
+      text-align: center;
+    }
+
+    &__cta-headline {
+      font-size: 2em;
+      font-weight: $font-semi-bold;
+      text-transform: uppercase;
+      margin: 2em 0 1em;
+    }
+
+    &__create-account {
+      margin-bottom: 20px;
+      font-size: 1.25em;
+    }
+  }
+
+  .bottom-cta {
+    &__text {
+      padding: 3rem 0;
+    }
+
+    &__record-icon {
+      height: 1.825rem;
+      width: 1.825rem;
+      padding: 0 15px;
+    }
+  }
+}
+
+@media (max-width: $tablet-portrait) {
+  .instructions {
+    &__items {
+      grid-template-columns: 1fr;
+      row-gap: 2em;
+    }
+
+    &__sub-text {
+      grid-template-areas:
+        "leftTop rightTop"
+        "leftBottom rightBottom";
+      grid-template-columns: 1fr 1fr;
+      justify-self: stretch;
+      align-items: center;
+    }
+
+    &__cta-text {
+      text-align: left;
+      margin: 0;
+    }
+
+    &__create-account,
+    &__sign-in {
+      margin: 0.5em;
+    }
+
+    .left-top {
+      grid-area: leftTop;
+    }
+
+    .right-top {
+      grid-area: rightTop;
+      text-align: center;
+    }
+
+    .left-bottom {
+      grid-area: leftBottom;
+    }
+
+    .right-bottom {
+      grid-area: rightBottom;
+      text-align: center;
+    }
+
+    &__main-prize-text.right-top {
+      text-align: left;
+    }
+  }
+
+  .inspiration {
+    display: grid;
+    justify-content: stretch;
+    grid-template-areas:
+      "headline"
+      "video"
+      "list";
+
+    &__headline {
+      margin-bottom: 1em;
+    }
+
+    &__list-wrapper {
+      padding: 1em 0;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__promotion-video {
+      justify-self: center;
+    }
+  }
+
+  .credits {
+    &__grid {
+      grid-template-columns: 1fr;
+      row-gap: 2.5em;
+    }
+
+    &__item {
+      column-gap: 2em;
+      display: grid;
+      grid-template-areas:
+        "itemHead subHeading"
+        "itemHead text";
+      text-align: left;
+
+      p {
+        margin: 5px 0;
+      }
+    }
+
+    &__item-head {
+      align-self: center;
+      grid-area: itemHead;
+      height: 10em;
+      margin: 1em;
+      width: 10em;
+    }
+
+    &__head-number {
+      font-size: 3em;
+    }
+
+    &__head-text {
+      font-size: 1.25em;
+    }
+
+    &__sub-heading {
+      grid-area: subHeading;
+      align-self: flex-end;
+      font-size: 1.5em;
+      height: auto;
+      padding: 1em 0;
+    }
+
+    &__text {
+      grid-area: text;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .instructions {
+    padding: 20px;
+
+    &__headline {
+      font-size: 2.5em;
+    }
+
+    &__sub-text {
+      align-self: flex-start;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "leftTop"
+      "rightTop"
+      "leftBottom"
+      "rightBottom";
+      font-size: 1.25em;
+      justify-self: stretch;
+    }
+
+    &__create-account,
+    &__sign-in {
+      justify-self: center;
+    }
+
+    &__app-link {
+      height: 2.625em;
+      margin: 0.5em;
+    }
+  }
+
+  .inspiration {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .main-prize {
+    &__cta-headline {
+      font-size: 1.5em;
+    }
+
+    &__items-wrapper {
+      grid-template-columns: 1fr;
+      row-gap: 2em;
+    }
+
+    &__icon-wrapper {
+      max-height: 3.5em;
+      max-width: 3.5em;
+    }
+  }
+
+  .credits {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__sub-heading {
+      padding: 1em 0;
+    }
+
+    &__item-head {
+      justify-self: center;
+    }
+
+    &__text {
+      padding: 0;
+    }
+
+    &__item {
+      grid-template-areas:
+        "itemHead"
+        "subHeading"
+        "text";
+      text-align: center;
+    }
+  }
+
+  .bottom-cta {
+    &__headline {
+      font-size: 2em;
+    }
+
+    &__text {
+      display: grid;
+      grid-template-columns: 1fr;
+      font-size: 2em;
+      justify-items: center;
+    }
+
+    &__record-icon {
+      display: inline-block;
+      height: 2.8125rem;
+      padding: 0 15px;
+      width: 2.8125rem;
+    }
+  }
+}
